@@ -26,14 +26,3 @@ async def forward(client, message):
             logger.info("Forwarded a message from", from_channel, "to", to_channel)
    except Exception as e:
        logger.exception(e)
-
-@channelforward.on_message((filters.group) & filters.text & filters.incoming)
-async def delete_message(client, message):
-    await asyncio.sleep(230)
-    await message.delete()
-    saif=await message.reply ("............")
-    await saif.delete(230)
-    await saif.reply_to_message.delete()
-    await asyncio.sleep(230)
-    await message.reply_to_message.delete()
-
