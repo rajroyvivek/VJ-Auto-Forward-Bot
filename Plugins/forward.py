@@ -20,7 +20,7 @@ async def forward(client, message):
       for id in Config.CHANNEL:
          from_channel, to_channel = id.split(":")
          if int(to_channel) == int(to_channel):
-            func = message.copy
+            func = message.forward
             await asyncio.sleep(2)
             await func(int(to_channel))
             logger.info("Forwarded a message from", from_channel, "to", to_channel)
